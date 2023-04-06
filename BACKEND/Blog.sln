@@ -11,15 +11,15 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infrastructure", "Infrastru
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Presentation", "Presentation", "{656BA85F-DBF0-495F-BE99-2E57B11081AA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Blog.Core.Application", "Blog.Core.Application\Blog.Core.Application.csproj", "{9CC2BA61-9D66-42F3-A849-472486B50859}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Blog.Core.Application", "Blog.Core.Application\Blog.Core.Application.csproj", "{9CC2BA61-9D66-42F3-A849-472486B50859}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Blog.Core.Domain", "Blog.Core.Domain\Blog.Core.Domain.csproj", "{6D66A1E4-349F-4A8E-90CC-ECC9462810AA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Blog.Core.Domain", "Blog.Core.Domain\Blog.Core.Domain.csproj", "{6D66A1E4-349F-4A8E-90CC-ECC9462810AA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Blog.Infrastructure.Persistence", "Blog.Infrastructure.Persistence\Blog.Infrastructure.Persistence.csproj", "{883BF82C-D858-49F6-88E4-5CAFFC8D1D3E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Blog.Infrastructure.Persistence", "Blog.Infrastructure.Persistence\Blog.Infrastructure.Persistence.csproj", "{883BF82C-D858-49F6-88E4-5CAFFC8D1D3E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Blog.Infrastructure.Shared", "Blog.Infrastructure.Shared\Blog.Infrastructure.Shared.csproj", "{44D130D7-B304-4FDB-A863-FA0F54988E41}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Blog.Infrastructure.Shared", "Blog.Infrastructure.Shared\Blog.Infrastructure.Shared.csproj", "{44D130D7-B304-4FDB-A863-FA0F54988E41}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Blog.Presentation.Api", "Blog.Presentation.Api\Blog.Presentation.Api.csproj", "{179D5086-71AD-449D-A6D4-D167F7825E63}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Blog.Presentation.WebApi", "Blog.Presentation.WebApi\Blog.Presentation.WebApi.csproj", "{81B472ED-6D52-494B-9F4C-BC27557203CD}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -43,10 +43,10 @@ Global
 		{44D130D7-B304-4FDB-A863-FA0F54988E41}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{44D130D7-B304-4FDB-A863-FA0F54988E41}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{44D130D7-B304-4FDB-A863-FA0F54988E41}.Release|Any CPU.Build.0 = Release|Any CPU
-		{179D5086-71AD-449D-A6D4-D167F7825E63}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{179D5086-71AD-449D-A6D4-D167F7825E63}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{179D5086-71AD-449D-A6D4-D167F7825E63}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{179D5086-71AD-449D-A6D4-D167F7825E63}.Release|Any CPU.Build.0 = Release|Any CPU
+		{81B472ED-6D52-494B-9F4C-BC27557203CD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{81B472ED-6D52-494B-9F4C-BC27557203CD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{81B472ED-6D52-494B-9F4C-BC27557203CD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{81B472ED-6D52-494B-9F4C-BC27557203CD}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -59,7 +59,7 @@ Global
 		{6D66A1E4-349F-4A8E-90CC-ECC9462810AA} = {46208BDB-E276-4900-B5F2-DFCEB0144993}
 		{883BF82C-D858-49F6-88E4-5CAFFC8D1D3E} = {2EEF3AF2-C963-4E24-BA9A-7DBE3A13C280}
 		{44D130D7-B304-4FDB-A863-FA0F54988E41} = {2EEF3AF2-C963-4E24-BA9A-7DBE3A13C280}
-		{179D5086-71AD-449D-A6D4-D167F7825E63} = {656BA85F-DBF0-495F-BE99-2E57B11081AA}
+		{81B472ED-6D52-494B-9F4C-BC27557203CD} = {656BA85F-DBF0-495F-BE99-2E57B11081AA}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {6CE5B33E-AFCB-4105-89C6-C38BCF7341B4}
