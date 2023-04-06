@@ -1,4 +1,6 @@
-﻿using Blog.Infrastructure.Persistence.Context;
+﻿using Blog.Core.Application.Interfaces.Repository;
+using Blog.Infrastructure.Persistence.Context;
+using Blog.Infrastructure.Persistence.Repositories;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -13,6 +15,9 @@ namespace Blog.Infrastructure.Persistence
                 options.UseSqlServer(configuration.GetConnectionString("BlogConnection"),
                     x => x.MigrationsAssembly(typeof(BlogContext).Assembly.FullName))
                 );
+
+            services.AddTransient(typeof(IGeneryRepository<>), typeof(GeneryRepository<>));
+            services.AddTransient<ICategoryRepository, CategoryRepository>();
 
             return services;
         }

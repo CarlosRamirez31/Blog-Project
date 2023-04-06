@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>net6.0</TargetFramework>
@@ -7,26 +7,20 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Dtos\" />
-    <Folder Include="Mappings\" />
-    <Folder Include="Exceptions\" />
-    <Folder Include="Helpers\" />
-    <Folder Include="Parameters\" />
-    <Folder Include="Validations\" />
-    <Folder Include="Services\" />
-    <Folder Include="Wrappers\" />
-  </ItemGroup>
-
-  <ItemGroup>
     <PackageReference Include="AutoMapper" Version="12.0.1" />
     <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="12.0.0" />
     <PackageReference Include="FluentValidation" Version="11.5.1" />
     <PackageReference Include="FluentValidation.DependencyInjectionExtensions" Version="11.5.1" />
+    <PackageReference Include="MediatR.Extensions.Microsoft.DependencyInjection" Version="11.1.0" />
     <PackageReference Include="WatchDog.NET" Version="1.4.6" />
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\Blog.Core.Domain\Blog.Core.Domain.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Interfaces\Services\" />
   </ItemGroup>
 
 </Project>
