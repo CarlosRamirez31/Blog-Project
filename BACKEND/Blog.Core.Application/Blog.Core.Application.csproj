@@ -10,7 +10,6 @@
     <Folder Include="Dtos\" />
     <Folder Include="Mappings\" />
     <Folder Include="Exceptions\" />
-    <Folder Include="Interfaces\" />
     <Folder Include="Helpers\" />
     <Folder Include="Parameters\" />
     <Folder Include="Validations\" />
