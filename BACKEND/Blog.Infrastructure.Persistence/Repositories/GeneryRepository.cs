@@ -1,6 +1,9 @@
-﻿using Blog.Core.Application.Interfaces.Repository;
+﻿using Blog.Core.Application.Helpers;
+using Blog.Core.Application.Interfaces.Repository;
+using Blog.Core.Application.Parameters;
 using Blog.Infrastructure.Persistence.Context;
 using Microsoft.EntityFrameworkCore;
+using System.Linq.Dynamic.Core;
 
 namespace Blog.Infrastructure.Persistence.Repositories
 {
@@ -41,6 +44,16 @@ namespace Blog.Infrastructure.Persistence.Repositories
         {
             _context.Set<T>().Remove(entity);
             await _context.SaveChangesAsync();
+        }
+
+        public IQueryable<TD> Ordering<TD>(PaginationRequest request, IQueryable<TD> queryable, bool paginate = false) where TD : class
+        {
+            IQueryable<TD> queryDto = (request.Order == "asc") ? queryable.OrderBy($"{request.Sort} ascending")
+                : queryable.OrderBy($"{request.Sort} descending");
+
+            if (!paginate) queryDto = queryDto.Paginate(request);
+
+            return queryDto;
         }
     }
 }
