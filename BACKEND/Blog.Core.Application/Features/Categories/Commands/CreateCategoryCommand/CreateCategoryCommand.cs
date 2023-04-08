@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using Blog.Core.Application.Dtos.Category;
 using Blog.Core.Application.Interfaces.Repository;
 using Blog.Core.Application.Wrappers;
 using Blog.Core.Domain.Entities;
@@ -6,12 +7,12 @@ using MediatR;
 
 namespace Blog.Core.Application.Features.Categories.Commands.CreateCategoryCommand
 {
-    public class CreateCategoryCommand : IRequest<Response<int>>
+    public class CreateCategoryCommand : IRequest<CategoryResponseDto>
     {
         public string? Name { get; set; }
     }
 
-    public class CreateCategoryCommandHandler : IRequestHandler<CreateCategoryCommand, Response<int>>
+    public class CreateCategoryCommandHandler : IRequestHandler<CreateCategoryCommand, CategoryResponseDto>
     {
         private readonly ICategoryRepository _categoryRepository;
         private readonly IMapper _mapper;
@@ -22,12 +23,13 @@ namespace Blog.Core.Application.Features.Categories.Commands.CreateCategoryComma
             _mapper = mapper;
         }
 
-        public async Task<Response<int>> Handle(CreateCategoryCommand request, CancellationToken cancellationToken)
+        public async Task<CategoryResponseDto> Handle(CreateCategoryCommand request, CancellationToken cancellationToken)
         {
             var category = _mapper.Map<Category>(request);
             var data = await _categoryRepository.AddAsync(category);
 
-            return new Response<int>(data.CategoryId);
+            var dto = _mapper.Map<CategoryResponseDto>(data);
+            return dto;
         }
     }
 }

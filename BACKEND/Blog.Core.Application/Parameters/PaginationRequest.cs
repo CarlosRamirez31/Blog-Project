@@ -7,8 +7,6 @@
         readonly int NumMaxRecordPage = 30;
         public string Order = "asc";
         public string? Sort = null; 
-        
-        
 
         public int Record
         {

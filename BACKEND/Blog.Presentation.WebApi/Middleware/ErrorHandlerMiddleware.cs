@@ -24,7 +24,7 @@ namespace Blog.Presentation.ApiWeb.Middleware
             {
                 var response = context.Response;
                 response.ContentType = "application/json";
-                var responseModel = new Response<string>() { IsSuccess = false , Message = error.Message };
+                var responseModel = new ResponseErrors<string>() { Message = error.Message };
 
                 switch (error)
                 {

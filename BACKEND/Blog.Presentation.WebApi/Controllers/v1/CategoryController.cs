@@ -4,7 +4,6 @@ using Blog.Core.Application.Features.Categories.Commands.UpdateCategoryCommand;
 using Blog.Core.Application.Features.Categories.Queries.GetAllCategoryQuery;
 using Blog.Core.Application.Features.Categories.Queries.GetCategoryByIdQuery;
 using Microsoft.AspNetCore.Mvc;
-using System.Security.Cryptography.X509Certificates;
 
 namespace Blog.Presentation.WebApi.Controllers.v1
 {
@@ -18,7 +17,7 @@ namespace Blog.Presentation.WebApi.Controllers.v1
             return Ok(await Mediator.Send(new GetAllCategoryQuery()));
         }
 
-        [HttpGet("{id}")]
+        [HttpGet("{id}", Name = "GetCategoryById")]
         public async Task<ActionResult> GetById(int id)
         {
             return Ok(await Mediator.Send(new GetCategoryByIdQuery() { CategoryId = id }));
@@ -27,19 +26,22 @@ namespace Blog.Presentation.WebApi.Controllers.v1
         [HttpPost("Register")]
         public async Task<ActionResult> Register(CreateCategoryCommand command)
         {
-            return Ok(await Mediator.Send(command));
+            var category = await Mediator.Send(command);
+            return CreatedAtRoute("GetCategoryById", new { id = category.CategoryId }, category);
         }
 
         [HttpPut("Update")]
         public async Task<ActionResult> Update(UpdateCategoryCommand command)
         {
-            return Ok(await Mediator.Send(command));
+            var category = await Mediator.Send(command); 
+            return Ok(category);
         }
 
         [HttpDelete("Delete/{id}")]
         public async Task<ActionResult> Delete(int id)
         {
-            return Ok(await Mediator.Send(new DeleteCategoryCommand() { CategoryId = id}));
+            var category = await Mediator.Send(new DeleteCategoryCommand() { CategoryId = id });
+            return Ok(category);
         }
     }
 }

@@ -6,12 +6,12 @@ using MediatR;
 
 namespace Blog.Core.Application.Features.Categories.Queries.GetAllCategoryQuery
 {
-    public class GetAllCategoryQuery : IRequest<Response<List<CategoryResponseDto>>>
+    public class GetAllCategoryQuery : IRequest<List<CategoryResponseDto>>
     {
 
     }
 
-    public class GetAllCategoryQueryHandler : IRequestHandler<GetAllCategoryQuery, Response<List<CategoryResponseDto>>>
+    public class GetAllCategoryQueryHandler : IRequestHandler<GetAllCategoryQuery, List<CategoryResponseDto>>
     {
         private readonly ICategoryRepository _categoryRepository;
         private readonly IMapper _mapper;
@@ -22,13 +22,13 @@ namespace Blog.Core.Application.Features.Categories.Queries.GetAllCategoryQuery
             _mapper = mapper;
         }
 
-        public async Task<Response<List<CategoryResponseDto>>> Handle(GetAllCategoryQuery request, CancellationToken cancellationToken)
+        public async Task<List<CategoryResponseDto>> Handle(GetAllCategoryQuery request, CancellationToken cancellationToken)
         {
             var category = await _categoryRepository.GetAllAsync();
 
             var dto = _mapper.Map<List<CategoryResponseDto>>(category);
 
-            return new Response<List<CategoryResponseDto>>(dto);
+            return dto;
         }
     }
 }
