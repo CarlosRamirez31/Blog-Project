@@ -1,6 +1,7 @@
 ﻿using Blog.Core.Application.Features.Posts.Commands.CreatePostCommand;
+using Blog.Core.Application.Features.Posts.Commands.DeletePostCommand;
+using Blog.Core.Application.Features.Posts.Commands.UpdatePostCommand;
 using Blog.Core.Application.Features.Posts.Queries.GetPostById;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Blog.Presentation.WebApi.Controllers.v1
@@ -19,6 +20,20 @@ namespace Blog.Presentation.WebApi.Controllers.v1
         {
             var post = await Mediator.Send(command);
             return CreatedAtRoute("GetPostById", new { id = post.PostId }, post);
+        }
+
+        [HttpPut("Update")]
+        public async Task<ActionResult> Update(UpdatePostCommand command)
+        {
+            var post = await Mediator.Send(command);
+            return Ok(post);
+        }
+
+        [HttpDelete("Delete/{id}")]
+        public async Task<ActionResult> Delete(int id)
+        {
+            var post = await Mediator.Send(new DeletePostCommand() { PostId = id});
+            return Ok(post);
         }
     }
 }
