@@ -17,9 +17,9 @@ namespace Blog.Infrastructure.Persistence.Migrations
                         .Annotation("SqlServer:Identity", "1, 1"),
                     Name = table.Column<string>(type: "nvarchar(120)", maxLength: 120, nullable: true),
                     CreateBy = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    Create = table.Column<DateTime>(type: "datetime2", nullable: true),
+                    Created = table.Column<DateTime>(type: "datetime2", nullable: false),
                     LastModifiedBy = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    LastModified = table.Column<DateTime>(type: "datetime2", nullable: true)
+                    LastModified = table.Column<DateTime>(type: "datetime2", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -38,9 +38,9 @@ namespace Blog.Infrastructure.Persistence.Migrations
                     ImagePath = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     CategoryId = table.Column<int>(type: "int", nullable: true),
                     CreateBy = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    Create = table.Column<DateTime>(type: "datetime2", nullable: true),
+                    Created = table.Column<DateTime>(type: "datetime2", nullable: false),
                     LastModifiedBy = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    LastModified = table.Column<DateTime>(type: "datetime2", nullable: true)
+                    LastModified = table.Column<DateTime>(type: "datetime2", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -62,9 +62,9 @@ namespace Blog.Infrastructure.Persistence.Migrations
                     Content = table.Column<string>(type: "nvarchar(255)", maxLength: 255, nullable: true),
                     PostId = table.Column<int>(type: "int", nullable: false),
                     CreateBy = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    Create = table.Column<DateTime>(type: "datetime2", nullable: true),
+                    Created = table.Column<DateTime>(type: "datetime2", nullable: false),
                     LastModifiedBy = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    LastModified = table.Column<DateTime>(type: "datetime2", nullable: true)
+                    LastModified = table.Column<DateTime>(type: "datetime2", nullable: false)
                 },
                 constraints: table =>
                 {

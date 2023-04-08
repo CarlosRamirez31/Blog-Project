@@ -20,7 +20,7 @@ namespace Blog.Infrastructure.Persistence.Context
                 switch (entry.State)
                 {
                     case EntityState.Added:
-                        entry.Entity.Create = DateTime.Now;
+                        entry.Entity.Created = DateTime.Now;
                         break;
                     case EntityState.Modified:
                         entry.Entity.LastModified = DateTime.Now;

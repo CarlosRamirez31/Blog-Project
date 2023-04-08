@@ -30,13 +30,13 @@ namespace Blog.Infrastructure.Persistence.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("CategoryId"), 1L, 1);
 
-                    b.Property<DateTime?>("Create")
-                        .HasColumnType("datetime2");
-
                     b.Property<string>("CreateBy")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<DateTime?>("LastModified")
+                    b.Property<DateTime>("Created")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime>("LastModified")
                         .HasColumnType("datetime2");
 
                     b.Property<string>("LastModifiedBy")
@@ -63,13 +63,13 @@ namespace Blog.Infrastructure.Persistence.Migrations
                         .HasMaxLength(255)
                         .HasColumnType("nvarchar(255)");
 
-                    b.Property<DateTime?>("Create")
-                        .HasColumnType("datetime2");
-
                     b.Property<string>("CreateBy")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<DateTime?>("LastModified")
+                    b.Property<DateTime>("Created")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime>("LastModified")
                         .HasColumnType("datetime2");
 
                     b.Property<string>("LastModifiedBy")
@@ -104,16 +104,16 @@ namespace Blog.Infrastructure.Persistence.Migrations
                         .HasMaxLength(255)
                         .HasColumnType("nvarchar(255)");
 
-                    b.Property<DateTime?>("Create")
-                        .HasColumnType("datetime2");
-
                     b.Property<string>("CreateBy")
                         .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("Created")
+                        .HasColumnType("datetime2");
 
                     b.Property<string>("ImagePath")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<DateTime?>("LastModified")
+                    b.Property<DateTime>("LastModified")
                         .HasColumnType("datetime2");
 
                     b.Property<string>("LastModifiedBy")
