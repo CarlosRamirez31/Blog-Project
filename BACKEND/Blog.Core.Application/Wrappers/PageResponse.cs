@@ -3,6 +3,6 @@
     public class PageResponse<T>
     {
         public int? NumRecord { get; set; }
-        public T? Items { get; set; }
+        public List<T>? Items { get; set; }
     }
 }

@@ -1,4 +1,5 @@
-﻿using Blog.Core.Application.Interfaces.Repository;
+﻿using Blog.Core.Application.Interfaces.Repositories;
+using Blog.Core.Application.Interfaces.Repository;
 using Blog.Infrastructure.Persistence.Context;
 using Blog.Infrastructure.Persistence.Repositories;
 using Microsoft.EntityFrameworkCore;
@@ -18,6 +19,7 @@ namespace Blog.Infrastructure.Persistence
 
             services.AddTransient(typeof(IGeneryRepository<>), typeof(GeneryRepository<>));
             services.AddTransient<ICategoryRepository, CategoryRepository>();
+            services.AddTransient<IPostRepository, PostRepository>();
 
             return services;
         }

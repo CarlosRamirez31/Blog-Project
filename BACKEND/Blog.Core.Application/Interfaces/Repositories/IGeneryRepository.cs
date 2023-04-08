@@ -1,4 +1,6 @@
-﻿namespace Blog.Core.Application.Interfaces.Repository
+﻿using Blog.Core.Application.Parameters;
+
+namespace Blog.Core.Application.Interfaces.Repository
 {
     public interface IGeneryRepository<T> where T : class
     {
