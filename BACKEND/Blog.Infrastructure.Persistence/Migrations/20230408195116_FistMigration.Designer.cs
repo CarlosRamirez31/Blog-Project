@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Blog.Infrastructure.Persistence.Migrations
 {
     [DbContext(typeof(BlogContext))]
-    [Migration("20230408024357_FirstMigration")]
-    partial class FirstMigration
+    [Migration("20230408195116_FistMigration")]
+    partial class FistMigration
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -73,9 +73,6 @@ namespace Blog.Infrastructure.Persistence.Migrations
 
                     b.Property<DateTime?>("LastModified")
                         .HasColumnType("datetime2");
-
-                    b.Property<string>("LastModifiedBy")
-                        .HasColumnType("nvarchar(max)");
 
                     b.Property<int>("PostId")
                         .HasColumnType("int");
