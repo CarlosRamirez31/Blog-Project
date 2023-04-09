@@ -1,6 +1,9 @@
 using Blog.Core.Application;
+using Blog.Infrastructure.Identity.Entities;
+using Blog.Infrastructure.Identity.Seeds;
 using Blog.Infrastructure.Persistence;
 using Blog.Presentation.WebApi.Extensions;
+using Microsoft.AspNetCore.Identity;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -14,6 +17,24 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 var app = builder.Build();
+
+using(var scope = app.Services.CreateScope())
+{
+    var services = scope.ServiceProvider;
+    try
+    {
+        var userManager = services.GetRequiredService<UserManager<ApplicationUser>>();
+        var roleManager = services.GetRequiredService<RoleManager<IdentityRole>>();
+
+        await DefaultRoles.SeedAsync(userManager, roleManager);
+        await DefaultUserAdmin.SeedAsync(userManager, roleManager);
+        await DefaultUserDeveloper.SeedAsync(userManager, roleManager);
+    }
+    catch(Exception ex)
+    {
+
+    }
+}
 
 if (app.Environment.IsDevelopment())
 {
