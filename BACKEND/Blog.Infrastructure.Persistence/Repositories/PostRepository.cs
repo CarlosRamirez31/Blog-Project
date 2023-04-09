@@ -40,7 +40,7 @@ namespace Blog.Infrastructure.Persistence.Repositories
             if (!string.IsNullOrEmpty(filter.StarDate) && !string.IsNullOrEmpty(filter.EndDate))
             {
                 post = post.Where(x => x.Created >= Convert.ToDateTime(filter.StarDate) &&
-                    x.Created <= Convert.ToDateTime(filter.EndDate));
+                    x.Created <= Convert.ToDateTime(filter.EndDate).AddDays(1));
             }
 
             if (filter.Sort is null) filter.Sort = "PostId";

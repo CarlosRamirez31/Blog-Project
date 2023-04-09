@@ -25,6 +25,8 @@ namespace Blog.Core.Application.Features.Categories.Queries.GetAllCategoryQuery
         public async Task<List<CategoryResponseDto>> Handle(GetAllCategoryQuery request, CancellationToken cancellationToken)
         {
             var category = await _categoryRepository.GetAllAsync();
+            if (category.Count() < 1)
+                throw new KeyNotFoundException("No se encuentra ninguna categoria");
 
             var dto = _mapper.Map<List<CategoryResponseDto>>(category);
 

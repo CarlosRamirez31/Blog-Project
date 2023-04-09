@@ -20,8 +20,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Features\Posts\Queries\GetAllPost\" />
-    <Folder Include="Features\Posts\Queries\GetFilterPost\" />
     <Folder Include="Interfaces\Services\" />
   </ItemGroup>
 

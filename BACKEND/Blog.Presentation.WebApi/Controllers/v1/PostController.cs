@@ -1,7 +1,9 @@
 ﻿using Blog.Core.Application.Features.Posts.Commands.CreatePostCommand;
 using Blog.Core.Application.Features.Posts.Commands.DeletePostCommand;
 using Blog.Core.Application.Features.Posts.Commands.UpdatePostCommand;
-using Blog.Core.Application.Features.Posts.Queries.GetPostById;
+using Blog.Core.Application.Features.Posts.Queries.GetAllPostQuery;
+using Blog.Core.Application.Features.Posts.Queries.GetFilterPostQuery;
+using Blog.Core.Application.Features.Posts.Queries.GetPostByIdQuery;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Blog.Presentation.WebApi.Controllers.v1
@@ -9,6 +11,18 @@ namespace Blog.Presentation.WebApi.Controllers.v1
     [ApiVersion("1.0")]
     public class PostController : BaseApiController
     {
+        [HttpGet]
+        public async Task<ActionResult> GetByFilter([FromQuery] GetFilterPostQuery query)
+        {
+            return Ok(await Mediator.Send(query));
+        }
+
+        [HttpGet("All")]
+        public async Task<ActionResult> GetAll()
+        {
+            return Ok(await Mediator.Send(new GetAllPostQuery()));
+        }
+
         [HttpGet("{id}", Name = "GetPostById")]
         public async Task<ActionResult> GetById(int id)
         {

@@ -3,7 +3,7 @@ using Blog.Core.Application.Dtos.Post;
 using Blog.Core.Application.Interfaces.Repositories;
 using MediatR;
 
-namespace Blog.Core.Application.Features.Posts.Queries.GetPostById
+namespace Blog.Core.Application.Features.Posts.Queries.GetPostByIdQuery
 {
     public class GetPostByIdQuery : IRequest<PostResponseDto>
     {

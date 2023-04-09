@@ -2,11 +2,11 @@
 {
     public class PaginationRequest
     {
-        public int NumPage = 1;
-        public int NumRecordPage = 10;
+        public int NumPage { get; set; } = 1;
+        public int NumRecordPage { get; set; } = 10;
         readonly int NumMaxRecordPage = 30;
-        public string Order = "asc";
-        public string? Sort = null; 
+        public string Order { get; set; } = "asc";
+        public string? Sort { get; set; } = null; 
 
         public int Record
         {
