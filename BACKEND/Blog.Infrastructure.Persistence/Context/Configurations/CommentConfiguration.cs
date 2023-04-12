@@ -17,6 +17,8 @@ namespace Blog.Infrastructure.Persistence.Context.Configurations
                 .HasConstraintName("Pk_Comment_Post");
 
             builder.Property(x => x.Content).HasMaxLength(255);
+
+            builder.Ignore(x => x.LastModifiedBy);
         }
     }
 }

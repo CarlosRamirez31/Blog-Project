@@ -1,6 +1,8 @@
-﻿using Blog.Core.Application.Wrappers;
+﻿using Blog.Core.Application.Interfaces.Services;
+using Blog.Core.Application.Wrappers;
 using Blog.Infrastructure.Identity.Context;
 using Blog.Infrastructure.Identity.Entities;
+using Blog.Infrastructure.Identity.Services;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
@@ -25,6 +27,8 @@ namespace Blog.Infrastructure.Identity
             services.AddIdentity<ApplicationUser, IdentityRole>()
                 .AddEntityFrameworkStores<IdentityContext>()
                 .AddDefaultTokenProviders();
+
+            services.AddTransient<IAccountService, AccountService>();
 
             services.AddAuthentication(options =>
             {
