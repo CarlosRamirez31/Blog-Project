@@ -17,9 +17,8 @@ namespace Blog.Infrastructure.Persistence.Context.Configurations
                 .OnDelete(DeleteBehavior.SetNull)
                 .HasConstraintName("Pk_Post_Category");
 
-            builder.Property(x => x.Title).HasMaxLength(100);
-            builder.Property(x => x.Brief).HasMaxLength(120);
-            builder.Property(x => x.Context).HasMaxLength(255);
+            builder.Property(x => x.Title).HasMaxLength(255);
+            builder.Property(x => x.Brief).HasMaxLength(255);
         }
     }
 }

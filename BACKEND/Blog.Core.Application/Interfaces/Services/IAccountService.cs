@@ -4,7 +4,7 @@ namespace Blog.Core.Application.Interfaces.Services
 {
     public interface IAccountService
     {
-        Task<string> RegisterUser(RegisterRequest request);
+        Task<RegisterResponse> RegisterUser(RegisterRequest request);
         Task<AuthenticationResponse> Authentication(AuthenticationRequest request);
     }
 }

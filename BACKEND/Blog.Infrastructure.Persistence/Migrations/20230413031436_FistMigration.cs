@@ -5,7 +5,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace Blog.Infrastructure.Persistence.Migrations
 {
-    public partial class FirstMigration : Migration
+    public partial class FistMigration : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -32,9 +32,9 @@ namespace Blog.Infrastructure.Persistence.Migrations
                 {
                     PostId = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    Title = table.Column<string>(type: "nvarchar(100)", maxLength: 100, nullable: true),
-                    Brief = table.Column<string>(type: "nvarchar(120)", maxLength: 120, nullable: true),
-                    Context = table.Column<string>(type: "nvarchar(255)", maxLength: 255, nullable: true),
+                    Title = table.Column<string>(type: "nvarchar(255)", maxLength: 255, nullable: false),
+                    Brief = table.Column<string>(type: "nvarchar(255)", maxLength: 255, nullable: false),
+                    Context = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     ImagePath = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     CategoryId = table.Column<int>(type: "int", nullable: true),
                     CreatedBy = table.Column<string>(type: "nvarchar(max)", nullable: true),

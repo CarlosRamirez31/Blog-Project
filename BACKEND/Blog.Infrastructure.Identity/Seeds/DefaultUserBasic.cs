@@ -11,9 +11,9 @@ namespace Blog.Infrastructure.Identity.Seeds
             var defaultUser = new ApplicationUser
             {
                 FirstName = "UserBasic",
-                LastName = "Admin",
-                UserName = "UserAdmin",
-                Email = "UserAdmin@gmail.com",
+                LastName = "Basic",
+                UserName = "UserBasic",
+                Email = "UserBasic@gmail.com",
                 EmailConfirmed = true,
                 PhoneNumberConfirmed = true
             };

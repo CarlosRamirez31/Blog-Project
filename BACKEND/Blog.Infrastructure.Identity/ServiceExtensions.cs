@@ -17,7 +17,7 @@ namespace Blog.Infrastructure.Identity
 {
     public static class ServiceExtensions
     {
-        public static void IdentityInfrastructure(this IServiceCollection services, IConfiguration configuration)
+        public static void AddIdentityInfrastructure(this IServiceCollection services, IConfiguration configuration)
         {
             services.AddDbContext<IdentityContext>(options =>
                 options.UseSqlServer(configuration.GetConnectionString("IdentityConnection"),
@@ -68,7 +68,7 @@ namespace Blog.Infrastructure.Identity
                     },
                     OnForbidden = context =>
                     {
-                        context.Response.StatusCode = 400;
+                        context.Response.StatusCode = 403;
                         context.Response.ContentType = "application/json";
                         var result = JsonConvert.SerializeObject(new ResponseErrors<string>() { Message = "Usted no tiene permiso sobre este recurso" });
                         return context.Response.WriteAsync(result);

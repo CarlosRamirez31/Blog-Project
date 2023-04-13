@@ -19,8 +19,4 @@
     <ProjectReference Include="..\Blog.Core.Domain\Blog.Core.Domain.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Interfaces\Services\" />
-  </ItemGroup>
-
 </Project>
