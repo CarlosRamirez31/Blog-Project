@@ -4,7 +4,7 @@ using Microsoft.AspNetCore.Identity;
 
 namespace Blog.Infrastructure.Identity.Seeds
 {
-    public class DefaultUserAdmin
+    public static class DefaultUserAdmin
     {
         public static async Task SeedAsync(UserManager<ApplicationUser> userManager, RoleManager<IdentityRole> roleManager)
         {

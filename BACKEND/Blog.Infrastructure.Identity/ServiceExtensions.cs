@@ -1,6 +1,8 @@
-﻿using Blog.Core.Application.Wrappers;
+﻿using Blog.Core.Application.Interfaces.Services;
+using Blog.Core.Application.Wrappers;
 using Blog.Infrastructure.Identity.Context;
 using Blog.Infrastructure.Identity.Entities;
+using Blog.Infrastructure.Identity.Services;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
@@ -15,7 +17,7 @@ namespace Blog.Infrastructure.Identity
 {
     public static class ServiceExtensions
     {
-        public static void IdentityInfrastructure(this IServiceCollection services, IConfiguration configuration)
+        public static void AddIdentityInfrastructure(this IServiceCollection services, IConfiguration configuration)
         {
             services.AddDbContext<IdentityContext>(options =>
                 options.UseSqlServer(configuration.GetConnectionString("IdentityConnection"),
@@ -25,6 +27,8 @@ namespace Blog.Infrastructure.Identity
             services.AddIdentity<ApplicationUser, IdentityRole>()
                 .AddEntityFrameworkStores<IdentityContext>()
                 .AddDefaultTokenProviders();
+
+            services.AddTransient<IAccountService, AccountService>();
 
             services.AddAuthentication(options =>
             {
@@ -64,7 +68,7 @@ namespace Blog.Infrastructure.Identity
                     },
                     OnForbidden = context =>
                     {
-                        context.Response.StatusCode = 400;
+                        context.Response.StatusCode = 403;
                         context.Response.ContentType = "application/json";
                         var result = JsonConvert.SerializeObject(new ResponseErrors<string>() { Message = "Usted no tiene permiso sobre este recurso" });
                         return context.Response.WriteAsync(result);

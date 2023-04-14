@@ -20,7 +20,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Interfaces\Services\" />
+    <Folder Include="Features\Comments\Commands\DeleteCommentCommand\" />
+    <Folder Include="Features\Comments\Commands\UpdateCommentCommand\" />
   </ItemGroup>
 
 </Project>

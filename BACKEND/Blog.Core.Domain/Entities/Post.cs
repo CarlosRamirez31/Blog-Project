@@ -5,9 +5,9 @@ namespace Blog.Core.Domain.Entities
     public class Post : AuditoryBaseEntity
     {
         public int PostId { get; set; }
-        public string? Title { get; set; }
-        public string? Brief { get; set; }
-        public string? Context { get; set; }
+        public string Title { get; set; }
+        public string Brief { get; set; }
+        public string Context { get; set; }
         public string? ImagePath { get; set; }
         public int? CategoryId { get; set; }
 

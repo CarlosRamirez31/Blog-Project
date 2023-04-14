@@ -1,16 +1,21 @@
 using Blog.Core.Application;
+using Blog.Infrastructure.Identity;
 using Blog.Infrastructure.Identity.Entities;
 using Blog.Infrastructure.Identity.Seeds;
 using Blog.Infrastructure.Persistence;
 using Blog.Presentation.WebApi.Extensions;
 using Microsoft.AspNetCore.Identity;
+using Blog.Infrastructure.Shared;
 
 var builder = WebApplication.CreateBuilder(args);
 
 var configuration = builder.Configuration;
 
-builder.Services.AddPersistenceInfrastructure(configuration);
 builder.Services.AddApplicationCore();
+builder.Services.AddPersistenceInfrastructure(configuration);
+builder.Services.AddIdentityInfrastructure(configuration);
+builder.Services.AddSharedInfrastructure();
+builder.Services.AddSwaggerExtension();
 builder.Services.AddVersioningExtension();
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
@@ -29,6 +34,7 @@ using(var scope = app.Services.CreateScope())
         await DefaultRoles.SeedAsync(userManager, roleManager);
         await DefaultUserAdmin.SeedAsync(userManager, roleManager);
         await DefaultUserDeveloper.SeedAsync(userManager, roleManager);
+        await DefaultUserBasic.SeedAsync(userManager, roleManager);
     }
     catch(Exception ex)
     {
@@ -43,6 +49,8 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
+
+app.UseAuthentication();
 
 app.UseAuthorization();
 
