@@ -1,8 +1,10 @@
 ﻿using AutoMapper;
 using Blog.Core.Application.Dtos.Category;
+using Blog.Core.Application.Dtos.Comment;
 using Blog.Core.Application.Dtos.Post;
 using Blog.Core.Application.Features.Categories.Commands.CreateCategoryCommand;
 using Blog.Core.Application.Features.Categories.Commands.UpdateCategoryCommand;
+using Blog.Core.Application.Features.Comments.Commands.CreateCommentCommand;
 using Blog.Core.Application.Features.Posts.Commands.CreatePostCommand;
 using Blog.Core.Application.Features.Posts.Commands.UpdatePostCommand;
 using Blog.Core.Application.Wrappers;
@@ -30,8 +32,14 @@ namespace Blog.Core.Application.Mappings
             CreateMap<PageResponse<Post>, PageResponse<PostResponseDto>>();
             CreateMap<CreatePostCommand, Post>();
             CreateMap<UpdatePostCommand, Post>();
-            
-            #endregion 
+
+            #endregion
+
+            #region Comment
+            CreateMap<Comment, CommentResponseDto>();
+            CreateMap<CreateCommentCommand, Comment>();
+
+            #endregion
 
             #endregion
         }

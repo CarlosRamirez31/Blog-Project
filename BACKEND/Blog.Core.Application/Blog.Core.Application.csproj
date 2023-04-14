@@ -19,4 +19,9 @@
     <ProjectReference Include="..\Blog.Core.Domain\Blog.Core.Domain.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Features\Comments\Commands\DeleteCommentCommand\" />
+    <Folder Include="Features\Comments\Commands\UpdateCommentCommand\" />
+  </ItemGroup>
+
 </Project>
