@@ -5,14 +5,16 @@ using Blog.Infrastructure.Identity.Seeds;
 using Blog.Infrastructure.Persistence;
 using Blog.Presentation.WebApi.Extensions;
 using Microsoft.AspNetCore.Identity;
+using Blog.Infrastructure.Shared;
 
 var builder = WebApplication.CreateBuilder(args);
 
 var configuration = builder.Configuration;
 
-builder.Services.AddPersistenceInfrastructure(configuration);
 builder.Services.AddApplicationCore();
+builder.Services.AddPersistenceInfrastructure(configuration);
 builder.Services.AddIdentityInfrastructure(configuration);
+builder.Services.AddSharedInfrastructure();
 builder.Services.AddSwaggerExtension();
 builder.Services.AddVersioningExtension();
 builder.Services.AddControllers();
@@ -47,6 +49,8 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
+
+app.UseAuthentication();
 
 app.UseAuthorization();
 
