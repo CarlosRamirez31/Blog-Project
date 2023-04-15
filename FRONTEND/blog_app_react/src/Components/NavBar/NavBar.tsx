@@ -1,8 +1,31 @@
+import { HamburgerButton } from "../HamburgerButton/HamburgerButton";
+import { useState } from "react";
+import { SideBar } from "../Sidebar/Sidebar";
+
+
+
 export const NarBar = () => {
+
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  const toggleMenu = () => {
+    setIsMenuOpen(!isMenuOpen);
+  }
   return (
     <>
       <nav className="bg-white border-gray-200 dark:bg-gray-900">
         <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
+          <div>
+            <header className="flex justify-between items-center bg-gray-900 text-white px-4 py-3">
+              <HamburgerButton isOpen={isMenuOpen} toggleButton={toggleMenu} />
+              <nav
+                className={`${
+                  isMenuOpen ? "block" : "hidden"
+                } md:block md:flex-grow md:items-center md:w-auto`}
+              >
+              </nav>
+            </header>
+          </div>
           <a href="" className="flex items-center">
             <img
               src="https://flowbite.com/docs/images/logo.svg"
