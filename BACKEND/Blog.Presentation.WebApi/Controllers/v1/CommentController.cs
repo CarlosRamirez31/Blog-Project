@@ -1,4 +1,5 @@
 ﻿using Blog.Core.Application.Features.Comments.Commands.CreateCommentCommand;
+using Blog.Core.Application.Features.Comments.Commands.DeleteCommentCommand;
 using Blog.Core.Application.Features.Comments.Commands.UpdateCommentCommand;
 using Blog.Core.Application.Features.Comments.Queries.GetAllCommentQuery;
 using Blog.Core.Application.Features.Comments.Queries.GetCommentByIdQuery;
@@ -39,6 +40,14 @@ namespace Blog.Presentation.WebApi.Controllers.v1
                 return BadRequest("Los parametro de postId no coinciden");
 
             var comment = await Mediator.Send(command);
+            return Ok(comment);
+        }
+
+
+        [HttpDelete("Delete/commentId")]
+        public async Task<ActionResult> Delete(int commentId)
+        {
+            var comment = await Mediator.Send(new DeleteCommentCommand() { CommentId = commentId});
             return Ok(comment);
         }
     }
