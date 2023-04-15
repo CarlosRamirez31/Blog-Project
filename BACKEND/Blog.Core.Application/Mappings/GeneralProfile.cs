@@ -5,6 +5,7 @@ using Blog.Core.Application.Dtos.Post;
 using Blog.Core.Application.Features.Categories.Commands.CreateCategoryCommand;
 using Blog.Core.Application.Features.Categories.Commands.UpdateCategoryCommand;
 using Blog.Core.Application.Features.Comments.Commands.CreateCommentCommand;
+using Blog.Core.Application.Features.Comments.Commands.UpdateCommentCommand;
 using Blog.Core.Application.Features.Posts.Commands.CreatePostCommand;
 using Blog.Core.Application.Features.Posts.Commands.UpdatePostCommand;
 using Blog.Core.Application.Wrappers;
@@ -38,6 +39,7 @@ namespace Blog.Core.Application.Mappings
             #region Comment
             CreateMap<Comment, CommentResponseDto>();
             CreateMap<CreateCommentCommand, Comment>();
+            CreateMap<UpdateCommentCommand, Comment>();
 
             #endregion
 

@@ -1,4 +1,7 @@
 ﻿using Blog.Core.Application.Features.Comments.Commands.CreateCommentCommand;
+using Blog.Core.Application.Features.Comments.Commands.DeleteCommentCommand;
+using Blog.Core.Application.Features.Comments.Commands.UpdateCommentCommand;
+using Blog.Core.Application.Features.Comments.Queries.GetAllCommentQuery;
 using Blog.Core.Application.Features.Comments.Queries.GetCommentByIdQuery;
 using Microsoft.AspNetCore.Mvc;
 
@@ -8,10 +11,16 @@ namespace Blog.Presentation.WebApi.Controllers.v1
     [Route("api/Post/{postId}/Comment")]
     public class CommentController : BaseApiController
     {
-        [HttpGet("{commentId}", Name = "GetCommentById")]
-        public async Task<ActionResult> GetById(int postId, int commentId)
+        [HttpGet]
+        public async Task<ActionResult> GetAll(int postId)
         {
-            return Ok(await Mediator.Send(new GetCommentByIdQuery() { PostId = postId, CommentId = commentId}));
+            return Ok(await Mediator.Send(new GetAllCommentQuery() { PostId = postId }));
+        }
+
+        [HttpGet("{commentId}", Name = "GetCommentById")]
+        public async Task<ActionResult> GetById([FromRoute]int commentId)
+        {
+            return Ok(await Mediator.Send(new GetCommentByIdQuery() { CommentId = commentId}));
         }
 
         [HttpPost("Register")]
@@ -22,6 +31,24 @@ namespace Blog.Presentation.WebApi.Controllers.v1
 
             var comment = await Mediator.Send(command);
             return CreatedAtRoute("GetCommentById", new { postId = comment.PostId, commentId = comment.CommentId}, comment);
+        }
+
+        [HttpPut("Update")]
+        public async Task<ActionResult> Update(int postId, UpdateCommentCommand command)
+        {
+            if(postId != command.PostId)
+                return BadRequest("Los parametro de postId no coinciden");
+
+            var comment = await Mediator.Send(command);
+            return Ok(comment);
+        }
+
+
+        [HttpDelete("Delete/{commentId}")]
+        public async Task<ActionResult> Delete(int commentId)
+        {
+            var comment = await Mediator.Send(new DeleteCommentCommand() { CommentId = commentId});
+            return Ok(comment);
         }
     }
 }
