@@ -5,5 +5,6 @@ namespace Blog.Core.Application.Interfaces.Repositories
 {
     public interface ICommentRepository : IGeneryRepository<Comment>
     {
+        Task<IEnumerable<Comment>> GetAllCommentAsync(int postId);
     }
 }
