@@ -1,15 +1,17 @@
 import { useState } from "react";
-import reactLogo from "./assets/react.svg";
-import viteLogo from "/vite.svg";
 import "./App.css";
 import { NarBar } from "./Components/NavBar/NavBar";
+import { Footer } from "./Components/Footer/Footer";
 
 function App() {
   return (
     <>
+      <div className="flex flex-col min-h-screen">
       <NarBar />
-      <div className="App">
-        <h1>Code</h1>
+        <div className="App flex-grow">
+          <h1>Code</h1>
+        </div>
+        <Footer/>
       </div>
     </>
   );
