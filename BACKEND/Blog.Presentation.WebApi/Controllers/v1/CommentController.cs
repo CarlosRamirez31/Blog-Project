@@ -9,9 +9,9 @@ namespace Blog.Presentation.WebApi.Controllers.v1
     public class CommentController : BaseApiController
     {
         [HttpGet("{commentId}", Name = "GetCommentById")]
-        public async Task<ActionResult> GetById(int postId, int commentId)
+        public async Task<ActionResult> GetById([FromRoute]int commentId)
         {
-            return Ok(await Mediator.Send(new GetCommentByIdQuery() { PostId = postId, CommentId = commentId}));
+            return Ok(await Mediator.Send(new GetCommentByIdQuery() { CommentId = commentId}));
         }
 
         [HttpPost("Register")]
