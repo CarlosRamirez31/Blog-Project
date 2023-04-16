@@ -45,9 +45,9 @@ namespace Blog.Presentation.WebApi.Controllers.v1
 
 
         [HttpDelete("Delete/{commentId}")]
-        public async Task<ActionResult> Delete(int commentId)
+        public async Task<ActionResult> Delete(int postId, int commentId)
         {
-            var comment = await Mediator.Send(new DeleteCommentCommand() { CommentId = commentId});
+            var comment = await Mediator.Send(new DeleteCommentCommand() { PostId = postId, CommentId = commentId});
             return Ok(comment);
         }
     }
