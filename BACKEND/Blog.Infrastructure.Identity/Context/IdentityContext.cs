@@ -16,11 +16,17 @@ namespace Blog.Infrastructure.Identity.Context
 
             builder.Entity<ApplicationUser>().ToTable(name: "User");
 
-            builder.Entity<IdentityRole>().ToTable(name: "Role");
-
-            builder.Entity<IdentityUserRole<string>>().ToTable(name: "UserRole");
+            builder.Entity<IdentityUserClaim<string>>().ToTable(name: "UserClaim");
 
             builder.Entity<IdentityUserLogin<string>>().ToTable(name: "UserLogin");
+
+            builder.Entity<IdentityUserToken<string>>().ToTable(name: "UserToken");
+
+            builder.Entity<IdentityRole>().ToTable(name: "Role");
+
+            builder.Entity<IdentityRoleClaim<string>>().ToTable(name: "RoleClaim");
+
+            builder.Entity<IdentityUserRole<string>>().ToTable(name: "UserRole");
         }
     }
 }

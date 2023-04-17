@@ -56,7 +56,7 @@ namespace Blog.Infrastructure.Identity.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "AspNetRoleClaims",
+                name: "RoleClaim",
                 schema: "Identity",
                 columns: table => new
                 {
@@ -68,9 +68,9 @@ namespace Blog.Infrastructure.Identity.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_AspNetRoleClaims", x => x.Id);
+                    table.PrimaryKey("PK_RoleClaim", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_AspNetRoleClaims_Role_RoleId",
+                        name: "FK_RoleClaim_Role_RoleId",
                         column: x => x.RoleId,
                         principalSchema: "Identity",
                         principalTable: "Role",
@@ -79,7 +79,7 @@ namespace Blog.Infrastructure.Identity.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "AspNetUserClaims",
+                name: "UserClaim",
                 schema: "Identity",
                 columns: table => new
                 {
@@ -91,31 +91,9 @@ namespace Blog.Infrastructure.Identity.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_AspNetUserClaims", x => x.Id);
+                    table.PrimaryKey("PK_UserClaim", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_AspNetUserClaims_User_UserId",
-                        column: x => x.UserId,
-                        principalSchema: "Identity",
-                        principalTable: "User",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
-                });
-
-            migrationBuilder.CreateTable(
-                name: "AspNetUserTokens",
-                schema: "Identity",
-                columns: table => new
-                {
-                    UserId = table.Column<string>(type: "nvarchar(450)", nullable: false),
-                    LoginProvider = table.Column<string>(type: "nvarchar(450)", nullable: false),
-                    Name = table.Column<string>(type: "nvarchar(450)", nullable: false),
-                    Value = table.Column<string>(type: "nvarchar(max)", nullable: true)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_AspNetUserTokens", x => new { x.UserId, x.LoginProvider, x.Name });
-                    table.ForeignKey(
-                        name: "FK_AspNetUserTokens_User_UserId",
+                        name: "FK_UserClaim_User_UserId",
                         column: x => x.UserId,
                         principalSchema: "Identity",
                         principalTable: "User",
@@ -172,17 +150,27 @@ namespace Blog.Infrastructure.Identity.Migrations
                         onDelete: ReferentialAction.Cascade);
                 });
 
-            migrationBuilder.CreateIndex(
-                name: "IX_AspNetRoleClaims_RoleId",
+            migrationBuilder.CreateTable(
+                name: "UserToken",
                 schema: "Identity",
-                table: "AspNetRoleClaims",
-                column: "RoleId");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_AspNetUserClaims_UserId",
-                schema: "Identity",
-                table: "AspNetUserClaims",
-                column: "UserId");
+                columns: table => new
+                {
+                    UserId = table.Column<string>(type: "nvarchar(450)", nullable: false),
+                    LoginProvider = table.Column<string>(type: "nvarchar(450)", nullable: false),
+                    Name = table.Column<string>(type: "nvarchar(450)", nullable: false),
+                    Value = table.Column<string>(type: "nvarchar(max)", nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_UserToken", x => new { x.UserId, x.LoginProvider, x.Name });
+                    table.ForeignKey(
+                        name: "FK_UserToken_User_UserId",
+                        column: x => x.UserId,
+                        principalSchema: "Identity",
+                        principalTable: "User",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                });
 
             migrationBuilder.CreateIndex(
                 name: "RoleNameIndex",
@@ -191,6 +179,12 @@ namespace Blog.Infrastructure.Identity.Migrations
                 column: "NormalizedName",
                 unique: true,
                 filter: "[NormalizedName] IS NOT NULL");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_RoleClaim_RoleId",
+                schema: "Identity",
+                table: "RoleClaim",
+                column: "RoleId");
 
             migrationBuilder.CreateIndex(
                 name: "EmailIndex",
@@ -205,6 +199,12 @@ namespace Blog.Infrastructure.Identity.Migrations
                 column: "NormalizedUserName",
                 unique: true,
                 filter: "[NormalizedUserName] IS NOT NULL");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_UserClaim_UserId",
+                schema: "Identity",
+                table: "UserClaim",
+                column: "UserId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_UserLogin_UserId",
@@ -222,15 +222,11 @@ namespace Blog.Infrastructure.Identity.Migrations
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
-                name: "AspNetRoleClaims",
+                name: "RoleClaim",
                 schema: "Identity");
 
             migrationBuilder.DropTable(
-                name: "AspNetUserClaims",
-                schema: "Identity");
-
-            migrationBuilder.DropTable(
-                name: "AspNetUserTokens",
+                name: "UserClaim",
                 schema: "Identity");
 
             migrationBuilder.DropTable(
@@ -239,6 +235,10 @@ namespace Blog.Infrastructure.Identity.Migrations
 
             migrationBuilder.DropTable(
                 name: "UserRole",
+                schema: "Identity");
+
+            migrationBuilder.DropTable(
+                name: "UserToken",
                 schema: "Identity");
 
             migrationBuilder.DropTable(

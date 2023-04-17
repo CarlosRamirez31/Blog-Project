@@ -13,7 +13,7 @@ namespace Blog.Infrastructure.Identity.Seeds
                 FirstName = "UserDeveloper",
                 LastName = "Developer",
                 Email = "UserDeveloper@gmail.com",
-                UserName = "UserDeveloper@gmail.com",
+                UserName = "UserDeveloper",
                 EmailConfirmed = true,
                 PhoneNumberConfirmed = true
             };
