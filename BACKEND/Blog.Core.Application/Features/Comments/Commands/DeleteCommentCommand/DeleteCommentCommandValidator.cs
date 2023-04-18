@@ -7,12 +7,10 @@ namespace Blog.Core.Application.Features.Comments.Commands.DeleteCommentCommand
         public DeleteCommentCommandValidator()
         {
             RuleFor(x => x.PostId)
-                .NotEmpty().WithMessage("{PropertyName} no puede esta vacio")
-                .NotNull().WithMessage("{PropertyName} no puede ser nulo");
+                .NotEmpty().WithMessage("{PropertyName} no puede esta vacio");
 
             RuleFor(x => x.CommentId)
-                .NotEmpty().WithMessage("{PropertyName} no puede esta vacio")
-                .NotNull().WithMessage("{PropertyName} no puede ser nulo");
+                .NotEmpty().WithMessage("{PropertyName} no puede esta vacio");
         }
     }
 }

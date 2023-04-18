@@ -7,8 +7,7 @@ namespace Blog.Core.Application.Features.Categories.Commands.DeleteCategoryComma
         public DeleteCategoryCommandValidator()
         {
             RuleFor(x => x.CategoryId)
-                .NotEmpty().WithMessage("{PropertyName} no puede esta vacio")
-                .NotNull().WithMessage("{PropertyName} no puede ser nulo");
+                .NotEmpty().WithMessage("{PropertyName} no puede esta vacio");
         }
     }
 }

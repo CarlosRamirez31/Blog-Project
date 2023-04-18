@@ -7,20 +7,17 @@ namespace Blog.Core.Application.Features.Posts.Commands.UpdatePostCommand
         public UpdatePostCommandValidator()
         {
             RuleFor(x => x.PostId)
-                .NotEmpty().WithMessage("{PropertyName} no puede esta vacio")
-                .NotNull().WithMessage("{PropertyName} no puede ser nulo");
+                .NotEmpty().WithMessage("{PropertyName} no puede esta vacio");
 
             RuleFor(x => x.Title)
                 .NotEmpty().WithMessage("{PropertyName} no puede esta vacio")
-                .NotNull().WithMessage("{PropertyName} no puede ser nulo")
                 .MaximumLength(255).WithMessage("{PropertyName} no puede ser mayor a {MaxLegth}");
 
             RuleFor(x => x.Brief)
                 .MaximumLength(255).WithMessage("{PropertyName} no puede ser mayor a {MaxLegth}");
 
             RuleFor(x => x.Context)
-                .NotEmpty().WithMessage("{PropertyName} no puede esta vacio")
-                .NotNull().WithMessage("{PropertyName} no puede ser nulo");
+                .NotEmpty().WithMessage("{PropertyName} no puede esta vacio");
 
             RuleFor(x => x.CategoryId)
                 .NotEmpty().WithMessage("{PropertyName} no puede esta vacio");
