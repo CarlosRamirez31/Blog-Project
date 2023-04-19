@@ -4,6 +4,7 @@ using Blog.Core.Application.Features.Categories.Commands.UpdateCategoryCommand;
 using Blog.Core.Application.Features.Categories.Queries.GetAllCategoryQuery;
 using Blog.Core.Application.Features.Categories.Queries.GetCategoryByIdQuery;
 using Microsoft.AspNetCore.Mvc;
+using Swashbuckle.AspNetCore.SwaggerGen;
 
 namespace Blog.Presentation.WebApi.Controllers.v1
 {
@@ -30,9 +31,12 @@ namespace Blog.Presentation.WebApi.Controllers.v1
             return CreatedAtRoute("GetCategoryById", new { id = category.CategoryId }, category);
         }
 
-        [HttpPut("Update")]
-        public async Task<ActionResult> Update(UpdateCategoryCommand command)
+        [HttpPut("Update/{categoryId}")]
+        public async Task<ActionResult> Update(int categoryId, UpdateCategoryCommand command)
         {
+            if (categoryId != command.CategoryId)
+                return BadRequest("Los parametros de categoryId no coinciden");
+
             var category = await Mediator.Send(command); 
             return Ok(category);
         }

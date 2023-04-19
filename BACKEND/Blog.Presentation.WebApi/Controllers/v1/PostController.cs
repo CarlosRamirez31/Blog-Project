@@ -36,9 +36,12 @@ namespace Blog.Presentation.WebApi.Controllers.v1
             return CreatedAtRoute("GetPostById", new { id = post.PostId }, post);
         }
 
-        [HttpPut("Update")]
-        public async Task<ActionResult> Update(UpdatePostCommand command)
+        [HttpPut("Update/{categoryId}")]
+        public async Task<ActionResult> Update(int categoryId, UpdatePostCommand command)
         {
+            if (categoryId != command.CategoryId)
+                return BadRequest("Los parametros de categoryId no coinciden");
+
             var post = await Mediator.Send(command);
             return Ok(post);
         }
@@ -46,7 +49,7 @@ namespace Blog.Presentation.WebApi.Controllers.v1
         [HttpDelete("Delete/{id}")]
         public async Task<ActionResult> Delete(int id)
         {
-            var post = await Mediator.Send(new DeletePostCommand() { PostId = id});
+            var post = await Mediator.Send(new DeletePostCommand() { PostId = id });
             return Ok(post);
         }
     }

@@ -18,9 +18,9 @@ namespace Blog.Presentation.WebApi.Controllers.v1
         }
 
         [HttpGet("{commentId}", Name = "GetCommentById")]
-        public async Task<ActionResult> GetById([FromRoute]int commentId)
+        public async Task<ActionResult> GetById([FromRoute] int commentId)
         {
-            return Ok(await Mediator.Send(new GetCommentByIdQuery() { CommentId = commentId}));
+            return Ok(await Mediator.Send(new GetCommentByIdQuery() { CommentId = commentId }));
         }
 
         [HttpPost("Register")]
@@ -30,13 +30,16 @@ namespace Blog.Presentation.WebApi.Controllers.v1
                 return BadRequest("Los parametro de postId no coinciden");
 
             var comment = await Mediator.Send(command);
-            return CreatedAtRoute("GetCommentById", new { postId = comment.PostId, commentId = comment.CommentId}, comment);
+            return CreatedAtRoute("GetCommentById", new { postId = comment.PostId, commentId = comment.CommentId }, comment);
         }
 
-        [HttpPut("Update")]
-        public async Task<ActionResult> Update(int postId, UpdateCommentCommand command)
+        [HttpPut("Update/{commentId}")]
+        public async Task<ActionResult> Update(int postId, int commentId, UpdateCommentCommand command)
         {
-            if(postId != command.PostId)
+            if (commentId != command.CommentId)
+                return BadRequest("Los parametro de commentId no coinciden");
+
+            if (postId != command.PostId)
                 return BadRequest("Los parametro de postId no coinciden");
 
             var comment = await Mediator.Send(command);
@@ -47,7 +50,7 @@ namespace Blog.Presentation.WebApi.Controllers.v1
         [HttpDelete("Delete/{commentId}")]
         public async Task<ActionResult> Delete(int postId, int commentId)
         {
-            var comment = await Mediator.Send(new DeleteCommentCommand() { PostId = postId, CommentId = commentId});
+            var comment = await Mediator.Send(new DeleteCommentCommand() { PostId = postId, CommentId = commentId });
             return Ok(comment);
         }
     }
