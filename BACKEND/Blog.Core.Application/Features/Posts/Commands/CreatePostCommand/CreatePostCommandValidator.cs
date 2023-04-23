@@ -13,7 +13,7 @@ namespace Blog.Core.Application.Features.Posts.Commands.CreatePostCommand
             RuleFor(x => x.Brief)
                 .MaximumLength(255).WithMessage("{PropertyName} no puede ser mayor a {MaxLegth}");
 
-            RuleFor(x => x.Context)
+            RuleFor(x => x.Content)
                 .NotEmpty().WithMessage("{PropertyName} no puede esta vacio");
 
             RuleFor(x => x.CategoryId)

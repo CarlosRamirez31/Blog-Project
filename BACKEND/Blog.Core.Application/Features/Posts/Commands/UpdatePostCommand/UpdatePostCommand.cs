@@ -10,7 +10,7 @@ namespace Blog.Core.Application.Features.Posts.Commands.UpdatePostCommand
         public int PostId { get; set; }
         public string? Title { get; set; }
         public string? Brief { get; set; }
-        public string? Context { get; set; }
+        public string? Content { get; set; }
         public int CategoryId { get; set; }
     }
 

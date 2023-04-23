@@ -32,7 +32,7 @@ namespace Blog.Infrastructure.Persistence.Repositories
                         post = post.Where(x => x.Brief!.Contains(filter.TextFilter));
                         break;
                     case 3:
-                        post = post.Where(x => x.Context!.Contains(filter.TextFilter));
+                        post = post.Where(x => x.Content!.Contains(filter.TextFilter));
                         break;
                 }
             }
