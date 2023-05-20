@@ -3,18 +3,23 @@ import "./App.css";
 import { NarBar } from "./Components/NavBar/NavBar";
 import { Footer } from "./Components/Footer/Footer";
 import { SideBar } from "./Components/Sidebar/Sidebar";
-import './index.css'
+import "./index.css";
 
 function App() {
   return (
     <>
       <div className="flex flex-col min-h-screen">
-        <NarBar />
-        <SideBar />
-        <main>
-          <div className="App flex-grow"></div>
+        <div className="container2">
+          <NarBar />
+          <div className="content">
+            <main>
+              <div className="App flex-grow"></div>
+            </main>
+          </div>
+        </div>
+        <div className="footer">
           <Footer />
-        </main>
+        </div>
       </div>
     </>
   );

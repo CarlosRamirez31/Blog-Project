@@ -8,3 +8,16 @@ body {
 }
 
 
+.container2 {
+  min-height: 100vh; /* Establece la altura mínima del contenedor al 100% de la altura de la ventana */
+  display: flex;
+  flex-direction: column; /* Establece el flujo en columna */
+}
+
+.content {
+  flex-grow: 1; /* Hace que el contenido principal crezca para ocupar todo el espacio disponible */
+}
+
+.footer {
+  flex-shrink: 0; /* Evita que el footer se encoja cuando el contenido es largo */
+}
