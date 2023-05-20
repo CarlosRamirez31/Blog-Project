@@ -17,6 +17,9 @@ export default {
         check: "url('/icons/check.svg')",
         landscape: "url('/images/landscape/2.jpg')",
       }),
+      fontFamily: {
+        sans: ['Cascadia Code', 'sans-serif'],
+      },
     },
   },
   variants: {

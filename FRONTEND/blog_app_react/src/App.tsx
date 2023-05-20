@@ -3,6 +3,7 @@ import "./App.css";
 import { NarBar } from "./Components/NavBar/NavBar";
 import { Footer } from "./Components/Footer/Footer";
 import { SideBar } from "./Components/Sidebar/Sidebar";
+import './index.css'
 
 function App() {
   return (

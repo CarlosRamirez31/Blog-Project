@@ -1,3 +1,5 @@
+import {AiOutlineAppstoreAdd} from 'react-icons/ai'
+
 export const Footer = () => {
   return (
     <>
@@ -8,12 +10,12 @@ export const Footer = () => {
               href="https://flowbite.com/"
               className="flex items-center mb-4 sm:mb-0"
             >
-              <img
-                src="https://flowbite.com/docs/images/logo.svg"
-                className="h-8 mr-3"
-                alt="Flowbite Logo"
-              />
-              <span className="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">
+              <span className="text-4x1">
+                <AiOutlineAppstoreAdd
+                  className="h-8 mr-3"
+                />
+              </span>
+              <span className="font-sans self-center text-2xl font-semibold whitespace-nowrap dark:text-white">
                 Blog app
               </span>
             </a>
