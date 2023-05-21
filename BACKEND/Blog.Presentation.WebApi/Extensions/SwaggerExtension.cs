@@ -21,6 +21,8 @@ namespace Blog.Presentation.WebApi.Extensions
 
             services.AddSwaggerGen(x =>
             {
+                x.EnableAnnotations();
+
                 x.SwaggerDoc("v1", openApiInfo);
 
                 var securityScheme = new OpenApiSecurityScheme
