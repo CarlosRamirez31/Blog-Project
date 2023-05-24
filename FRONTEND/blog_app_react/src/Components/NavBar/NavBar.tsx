@@ -61,6 +61,7 @@ export const NarBar = () => {
           </div>
         </div>
       </nav>
+      {isMenuOpen && <SideBar />}
     </>
   );
 };
