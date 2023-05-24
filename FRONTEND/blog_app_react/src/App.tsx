@@ -10,11 +10,26 @@ function App() {
       <div className="flex flex-col min-h-screen">
         <BrowserRouter>
           <div className="container2">
-            <NarBar />
+              <NarBar />
             <div className="content">
-              <main>
-                <div className="App flex-grow"></div>
-              </main>
+              <div className="flex justify-center">
+                <div className="w-1/4 p-4">
+                  {/* Componente Izquierdo */}
+                  <div className="bg-gray-200 h-screen">
+                    Componente Izquierdo
+                  </div>
+                </div>
+                <div className="w-1/2 p-4">
+                  {/* Componente Principal */}
+                  <div className="bg-gray-300 h-screen">
+                    Componente Principal
+                  </div>
+                </div>
+                <div className="w-1/4 p-4">
+                  {/* Componente Derecho */}
+                  <div className="bg-gray-200 h-screen">Componente Derecho</div>
+                </div>
+              </div>
             </div>
           </div>
           <div className="footer">

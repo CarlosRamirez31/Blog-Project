@@ -11,7 +11,7 @@ export const SideBar = () => {
   const [isSidebarOpen, setIsSidebarOpen] = useState(true);
 
   return (
-    <div className="relative flex flex-col flex-grow h-full">
+    <div className="z-20 relative flex flex-col flex-grow h-full">
       <div className="bg-gray-800 text-gray-100 flex justify-between items-center px-4 py-2">
         <button
           className="focus:outline-none lg:hidden"
