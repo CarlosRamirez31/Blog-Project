@@ -14,9 +14,6 @@ body {
   flex-direction: column; /* Establece el flujo en columna */
 }
 
-.content {
-  flex-grow: 1; /* Hace que el contenido principal crezca para ocupar todo el espacio disponible */
-}
 
 .footer {
   flex-shrink: 0; /* Evita que el footer se encoja cuando el contenido es largo */
