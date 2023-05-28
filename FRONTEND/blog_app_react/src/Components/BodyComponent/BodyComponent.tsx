@@ -2,6 +2,7 @@ import { MainComponent } from "../../MainComponent/MainComponent";
 import TweetsComponent from "./Center/TweetsComponent";
 import "./BodyStyles.css"
 import NavbarLeftSide from "./NavbarLeftSide/NabBarLeftSide.jsx"
+import NavbarRightSideComponent from "./NavbarRightSide/NavbarRightSideComponent";
 
 export const BodyComponent = () => {
   return (
@@ -23,7 +24,9 @@ export const BodyComponent = () => {
         </div>
         <div className="w-1/4 p-4">
           {/* Componente Derecho */}
-          <div className="bg-gray-200 h-full">Componente Derecho</div>
+          <div className="h-full">
+            <NavbarRightSideComponent />
+          </div>
         </div>
       </div>
     </>
