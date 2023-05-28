@@ -13,7 +13,7 @@ function App() {
           <div className="container2">
               <NarBar />
             <div className="content">
-              <BodyComponent />
+              {/* <BodyComponent /> */}
             </div>
           </div>
           <div className="footer">
