@@ -2,6 +2,23 @@
 
 
 const TweetsComponent = () => {
+  const styles1 = {
+    margin: "height: 200px; background-image: url(https://images.unsplash.com/photo-1556740738-b6a63e27c4df?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=crop&amp;w=448&amp;q=80);"
+  }
+
+  const styles2 = {
+    margin: "height: 200px; background-image: url(https://images.unsplash.com/photo-1556740738-b6a63e27c4df?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=crop&amp;w=448&amp;q=80);"
+  }
+
+  const styles3 = {
+    margin: "height: 200px; background-image: url(https://images.unsplash.com/photo-1556740738-b6a63e27c4df?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=crop&amp;w=448&amp;q=80);"
+  }
+
+  const styles4 = {
+    margin: "height: 200px; background-image: url(https://images.unsplash.com/photo-1556740738-b6a63e27c4df?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=crop&amp;w=448&amp;q=80);"
+  }
+  
+
   return (
     <>
       <li>
@@ -36,7 +53,7 @@ const TweetsComponent = () => {
             </p>
 
             <div className="md:flex-shrink pr-6 pt-3">
-              <div className="bg-cover bg-no-repeat bg-center rounded-lg w-full h-64" style="height: 200px; background-image: url(https://images.unsplash.com/photo-1556740738-b6a63e27c4df?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=crop&amp;w=448&amp;q=80);">
+              <div className="bg-cover bg-no-repeat bg-center rounded-lg w-full h-64" style={styles1}>
                 <img className="opacity-0 w-full h-full" src="https://images.unsplash.com/photo-1556740738-b6a63e27c4df?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=crop&amp;w=448&amp;q=80" alt="" />
               </div>
             </div>
@@ -113,7 +130,7 @@ const TweetsComponent = () => {
             </p>
 
             <div className="md:flex-shrink pr-6 pt-3">
-              <div className="bg-cover bg-no-repeat bg-center rounded-lg w-full h-64" style="height: 200px; background-image: url(https://images.unsplash.com/photo-1556740738-b6a63e27c4df?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=crop&amp;w=448&amp;q=80);">
+              <div className="bg-cover bg-no-repeat bg-center rounded-lg w-full h-64" style={styles2}>
                 <img className="opacity-0 w-full h-full" src="https://images.unsplash.com/photo-1556740738-b6a63e27c4df?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=crop&amp;w=448&amp;q=80" alt="" />
               </div>
             </div>
@@ -190,7 +207,7 @@ const TweetsComponent = () => {
             </p>
 
             <div className="md:flex-shrink pr-6 pt-3">
-              <div className="bg-cover bg-no-repeat bg-center rounded-lg w-full h-64" style="height: 200px; background-image: url(https://images.unsplash.com/photo-1556740738-b6a63e27c4df?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=crop&amp;w=448&amp;q=80);">
+              <div className="bg-cover bg-no-repeat bg-center rounded-lg w-full h-64" style={styles3}>
                 <img className="opacity-0 w-full h-full" src="https://images.unsplash.com/photo-1556740738-b6a63e27c4df?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=crop&amp;w=448&amp;q=80" alt="" />
               </div>
             </div>
@@ -267,7 +284,7 @@ const TweetsComponent = () => {
             </p>
 
             <div className="md:flex-shrink pr-6 pt-3">
-              <div className="bg-cover bg-no-repeat bg-center rounded-lg w-full h-64" style="height: 200px; background-image: url(https://images.unsplash.com/photo-1556740738-b6a63e27c4df?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=crop&amp;w=448&amp;q=80);">
+              <div className="bg-cover bg-no-repeat bg-center rounded-lg w-full h-64" style={styles4}>
                 <img className="opacity-0 w-full h-full" src="https://images.unsplash.com/photo-1556740738-b6a63e27c4df?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=crop&amp;w=448&amp;q=80" alt="" />
               </div>
             </div>
@@ -315,6 +332,5 @@ const TweetsComponent = () => {
     </>
   )
 }
-
 
 export default TweetsComponent
