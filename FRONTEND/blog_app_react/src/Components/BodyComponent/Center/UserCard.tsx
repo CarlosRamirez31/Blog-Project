@@ -1,19 +1,32 @@
 
-
-
 const UserCard = () => {
+  
+  const styles1 = {
+    margin: "height:9rem; width:9rem;"
+  }
+
+  const styles2 = {
+    margin: "height:9rem; width:9rem;"
+  }
+  
+  const styles3 = {
+    margin: "height: 200px; background-image: url(https://pbs.twimg.com/profile_banners/2161323234/1585151401/600x200);"
+  }
+
   return (
+
+    
     <div>
-      <div className="w-full bg-cover bg-no-repeat bg-center" style="height: 200px; background-image: url(https://pbs.twimg.com/profile_banners/2161323234/1585151401/600x200);">
+      <div className="w-full bg-cover bg-no-repeat bg-center" style={styles3}>
         <img className="opacity-0 w-full h-full" src="https://pbs.twimg.com/profile_banners/2161323234/1585151401/600x200" alt="" />
       </div>
       <div className="p-4">
         <div className="relative flex w-full">
           {/* <!-- Avatar --> */}
           <div className="flex flex-1">
-            <div style="margin-top: -6rem;">
-              <div style="height:9rem; width:9rem;" className="md rounded-full relative avatar">
-                <img style="height:9rem; width:9rem;" className="md rounded-full relative border-4 border-gray-900" src="https://pbs.twimg.com/profile_images/1254779846615420930/7I4kP65u_400x400.jpg" alt="" />
+            <div style={styles1}>
+              <div style={styles1} className="md rounded-full relative avatar">
+                <img style={styles2} className="md rounded-full relative border-4 border-gray-900" src="https://pbs.twimg.com/profile_images/1254779846615420930/7I4kP65u_400x400.jpg" alt="" />
                 <div className="absolute"></div>
               </div>
             </div>
