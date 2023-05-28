@@ -9,7 +9,7 @@ const NavbarLeftSide = () => {
   return (
     <>
       <div style={style1}>
-        <div className="overflow-y-auto align-middle fixed h-screen pr-3 " style={style1}>
+        <div className="overflow-y-auto align-middle p-10 fixed h-screen pr-3 " style={style1}>
           {/* <!--Logo--> */}
           <svg
             viewBox="0 0 24 24"
@@ -129,7 +129,7 @@ const NavbarLeftSide = () => {
             </a>
             <a
               href="#"
-              className="group flex items-center px-2 py-2 text-base leading-6 font-semibold rounded-full bg-gray-800 text-blue-300"
+              className="mt-1 group flex items-center px-2 py-2 text-base leading-6 font-medium rounded-full hover:bg-gray-800 hover:text-blue-300"
             >
               <svg
                 className="mr-4 h-6 w-6"
@@ -169,7 +169,7 @@ const NavbarLeftSide = () => {
 
           {/* <!-- User Menu --> */}
           <div className="absolute" style={style2}>
-            <div className="flex-shrink-0 flex hover:bg-gray-800 rounded-full px-4 py-3 mt-12 mr-2">
+            <div className="flex-shrink-0 flex hover:bg-gray-800 rounded-full w-100 px-4 py-3 mt-12 mr-2">
               <a href="#" className="flex-shrink-0 group block">
                 <div className="flex items-center">
                   <div>
