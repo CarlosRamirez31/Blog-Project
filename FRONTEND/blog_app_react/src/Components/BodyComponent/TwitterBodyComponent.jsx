@@ -57,10 +57,6 @@ export const TwitterBodyComponent = () => {
                                 {/* <!--Aside menu (right side)--> */}
                                 <div style="max-width:350px;">
                                     <div className="overflow-y-auto fixed  h-screen">
-
-
-
-
                                         <div className="relative text-gray-300 w-80 p-5">
                                             <button type="submit" className="absolute ml-4 mt-3 mr-4">
                                                 <svg className="h-4 w-4 fill-current" xmlns="http://www.w3.org/2000/svg" xmlns: xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_1" x="0px" y="0px" viewBox="0 0 56.966 56.966" style="enable-background:new 0 0 56.966 56.966;" xml: space="preserve" width="512px" height="512px">
@@ -149,15 +145,53 @@ export const TwitterBodyComponent = () => {
                                                     </a>
                                                 </div>
                                             </div>
+                                            <hr className="border-gray-800" />
+
+                                            {/* <!--second trending tweet--> */}
+
+                                            <div className="flex">
+                                                <div className="flex-1">
+                                                    <p className="px-4 ml-2 mt-3 w-48 text-xs text-gray-400">2 . Politics . Trending</p>
+                                                    <h2 className="px-4 ml-2 w-48 font-bold text-white">#HI-Fashion</h2>
+                                                    <p className="px-4 ml-2 mb-3 w-48 text-xs text-gray-400">8,464 Tweets</p>
+
+                                                </div>
+                                                <div className="flex-1 px-4 py-2 m-2">
+                                                    <a href="" className=" text-2xl rounded-full text-gray-400 hover:bg-gray-800 hover:text-blue-300 float-right">
+                                                        <svg className="m-2 h-5 w-5" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" stroke="currentColor" viewBox="0 0 24 24">
+                                                            <path d="M19 9l-7 7-7-7"></path>
+                                                        </svg>
+                                                    </a>
+                                                </div>
+                                            </div>
                                             <hr className="border-gray-800">
 
-                                                {/* <!--second trending tweet--> */}
+                                                {/* <!--third trending tweet--> */}
 
                                                 <div className="flex">
                                                     <div className="flex-1">
-                                                        <p className="px-4 ml-2 mt-3 w-48 text-xs text-gray-400">2 . Politics . Trending</p>
-                                                        <h2 className="px-4 ml-2 w-48 font-bold text-white">#HI-Fashion</h2>
-                                                        <p className="px-4 ml-2 mb-3 w-48 text-xs text-gray-400">8,464 Tweets</p>
+                                                        <p className="px-4 ml-2 mt-3 w-48 text-xs text-gray-400">3 . Rock . Trending</p>
+                                                        <h2 className="px-4 ml-2 w-48 font-bold text-white">#Ferrari</h2>
+                                                        <p className="px-4 ml-2 mb-3 w-48 text-xs text-gray-400">5,586 Tweets</p>
+
+                                                    </div>
+                                                    <div className="flex-1 px-4 py-2 m-2">
+                                                        <a href="" className=" text-2xl rounded-full text-gray-400 hover:bg-gray-800 hover:text-blue-300 float-right">
+                                                            <svg className="m-2 h-5 w-5" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" stroke="currentColor" viewBox="0 0 24 24">
+                                                                <path d="M19 9l-7 7-7-7"></path>
+                                                            </svg>
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                                <hr className="border-gray-800" />
+
+                                                {/* <!--forth trending tweet--> */}
+
+                                                <div className="flex">
+                                                    <div className="flex-1">
+                                                        <p className="px-4 ml-2 mt-3 w-48 text-xs text-gray-400">4 . Auto Racing . Trending</p>
+                                                        <h2 className="px-4 ml-2 w-48 font-bold text-white">#vettel</h2>
+                                                        <p className="px-4 ml-2 mb-3 w-48 text-xs text-gray-400">9,416 Tweets</p>
 
                                                     </div>
                                                     <div className="flex-1 px-4 py-2 m-2">
@@ -170,161 +204,25 @@ export const TwitterBodyComponent = () => {
                                                 </div>
                                                 <hr className="border-gray-800">
 
-                                                    {/* <!--third trending tweet--> */}
+                                                    {/* <!--show more--> */}
 
                                                     <div className="flex">
-                                                        <div className="flex-1">
-                                                            <p className="px-4 ml-2 mt-3 w-48 text-xs text-gray-400">3 . Rock . Trending</p>
-                                                            <h2 className="px-4 ml-2 w-48 font-bold text-white">#Ferrari</h2>
-                                                            <p className="px-4 ml-2 mb-3 w-48 text-xs text-gray-400">5,586 Tweets</p>
-
-                                                        </div>
-                                                        <div className="flex-1 px-4 py-2 m-2">
-                                                            <a href="" className=" text-2xl rounded-full text-gray-400 hover:bg-gray-800 hover:text-blue-300 float-right">
-                                                                <svg className="m-2 h-5 w-5" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" stroke="currentColor" viewBox="0 0 24 24">
-                                                                    <path d="M19 9l-7 7-7-7"></path>
-                                                                </svg>
-                                                            </a>
+                                                        <div className="flex-1 p-4">
+                                                            <h2 className="px-4 ml-2 w-48 font-bold text-blue-400">Show more</h2>
                                                         </div>
                                                     </div>
-                                                    <hr className="border-gray-800">
 
-                                                        {/* <!--forth trending tweet--> */}
-
-                                                        <div className="flex">
-                                                            <div className="flex-1">
-                                                                <p className="px-4 ml-2 mt-3 w-48 text-xs text-gray-400">4 . Auto Racing . Trending</p>
-                                                                <h2 className="px-4 ml-2 w-48 font-bold text-white">#vettel</h2>
-                                                                <p className="px-4 ml-2 mb-3 w-48 text-xs text-gray-400">9,416 Tweets</p>
-
-                                                            </div>
-                                                            <div className="flex-1 px-4 py-2 m-2">
-                                                                <a href="" className=" text-2xl rounded-full text-gray-400 hover:bg-gray-800 hover:text-blue-300 float-right">
-                                                                    <svg className="m-2 h-5 w-5" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" stroke="currentColor" viewBox="0 0 24 24">
-                                                                        <path d="M19 9l-7 7-7-7"></path>
-                                                                    </svg>
-                                                                </a>
-                                                            </div>
-                                                        </div>
-                                                        <hr className="border-gray-800">
-
-                                                            {/* <!--show more--> */}
-
-                                                            <div className="flex">
-                                                                <div className="flex-1 p-4">
-                                                                    <h2 className="px-4 ml-2 w-48 font-bold text-blue-400">Show more</h2>
-                                                                </div>
-                                                            </div>
-
-                                                        </div>
-                                                        {/* <!--people suggetion to follow section--> */}
-                                                        <div className="max-w-sm rounded-lg  bg-dim-700 overflow-hidden shadow-lg m-4">
-                                                            <div className="flex">
-                                                                <div className="flex-1 m-2">
-                                                                    <h2 className="px-4 py-2 text-xl w-48 font-semibold text-white">Who to follow</h2>
-                                                                </div>
-                                                            </div>
-
-
-                                                            <hr className="border-gray-800">
-
-                                                                {/* <!--first person who to follow--> */}
-
-                                                                <div className="flex flex-shrink-0">
-                                                                    <div className="flex-1 ">
-                                                                        <div className="flex items-center w-48">
-                                                                            <div>
-                                                                                <img className="inline-block h-10 w-auto rounded-full ml-4 mt-2" src="https://pbs.twimg.com/profile_images/1121328878142853120/e-rpjoJi_bigger.png" alt="" />
-                                                                            </div>
-                                                                            <div className="ml-3 mt-3">
-                                                                                <p className="text-base leading-6 font-medium text-white">
-                                                                                    Sonali Hirave
-                                                                                </p>
-                                                                                <p className="text-sm leading-5 font-medium text-gray-400 group-hover:text-gray-300 transition ease-in-out duration-150">
-                                                                                    @ShonaDesign
-                                                                                </p>
-                                                                            </div>
-                                                                        </div>
-
-                                                                    </div>
-                                                                    <div className="flex-1 px-4 py-2 m-2">
-                                                                        <a href="" className=" float-right">
-                                                                            <button className="bg-transparent hover:bg-gray-800 text-white font-semibold hover:text-white py-2 px-4 border border-white hover:border-transparent rounded-full">
-                                                                                Follow
-                                                                            </button>
-                                                                        </a>
-
-                                                                    </div>
-                                                                </div>
-                                                                <hr className="border-gray-800">
-
-                                                                    {/* <!--second person who to follow--> */}
-
-                                                                    <div className="flex flex-shrink-0">
-                                                                        <div className="flex-1 ">
-                                                                            <div className="flex items-center w-48">
-                                                                                <div>
-                                                                                    <img className="inline-block h-10 w-auto rounded-full ml-4 mt-2" src="https://pbs.twimg.com/profile_images/1121328878142853120/e-rpjoJi_bigger.png" alt="" />
-                                                                                </div>
-                                                                                <div className="ml-3 mt-3">
-                                                                                    <p className="text-base leading-6 font-medium text-white">
-                                                                                        Sonali Hirave
-                                                                                    </p>
-                                                                                    <p className="text-sm leading-5 font-medium text-gray-400 group-hover:text-gray-300 transition ease-in-out duration-150">
-                                                                                        @ShonaDesign
-                                                                                    </p>
-                                                                                </div>
-                                                                            </div>
-
-                                                                        </div>
-                                                                        <div className="flex-1 px-4 py-2 m-2">
-                                                                            <a href="" className=" float-right">
-                                                                                <button className="bg-transparent hover:bg-gray-800 text-white font-semibold hover:text-white py-2 px-4 border border-white hover:border-transparent rounded-full">
-                                                                                    Follow
-                                                                                </button>
-                                                                            </a>
-
-                                                                        </div>
-                                                                    </div>
-
-                                                                    <hr className="border-gray-800">
-
-
-
-                                                                        {/* <!--show more--> */}
-
-                                                                        <div className="flex">
-                                                                            <div className="flex-1 p-4">
-                                                                                <h2 className="px-4 ml-2 w-48 font-bold text-blue-400">Show more</h2>
-                                                                            </div>
-                                                                        </div>
-
-                                                                    </div>
-
-
-
-
-                                                                    <div className="flow-root m-6 inline">
-                                                                        <div className="flex-1">
-                                                                            <a href="#">
-                                                                                <p className="text-sm leading-6 font-medium text-gray-500">Terms Privacy Policy Cookies Imprint Ads info
-                                                                                </p>
-                                                                            </a>
-                                                                        </div>
-                                                                        <div className="flex-2">
-                                                                            <p className="text-sm leading-6 font-medium text-gray-600"> © 2020 Twitter, Inc.</p>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                        </div>
-                                                    </aside>
                                                 </div>
-                                            </main>
-
+                                                {/* <!--people suggetion to follow section--> */}
+                                                <PeopleSuggetion />
+                                            </aside>
                                         </div>
+                                    </main>
 
-                                    </div>
+                                </div>
 
-                                </>
-                                )
+                        </div>
+                </div>
+            </>
+            )
 }
