@@ -4,16 +4,17 @@ import { Footer } from "./Components/Footer/Footer";
 import "./index.css";
 import { BrowserRouter } from "react-router-dom";
 import { BodyComponent } from "./Components/BodyComponent/BodyComponent";
+import "./Components/BodyComponent/BodyStyles.css"
 
 function App() {
   return (
     <>
-      <div className="flex flex-col min-h-screen">
+      <div className="principal flex flex-col min-h-screen">
         <BrowserRouter>
           <div className="container2">
               <NarBar />
             <div className="content">
-              {/* <BodyComponent /> */}
+              <BodyComponent />
             </div>
           </div>
           <div className="footer">
